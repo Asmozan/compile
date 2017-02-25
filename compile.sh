@@ -25,6 +25,5 @@ if ! [[ -s error.log ]] ;
 fi
 
 #result show
-cd ..
 echo "Result of program:"
-bash resultlog.sh
+./main
