@@ -5,9 +5,9 @@
 #CMakeLists init & config
 touch CMakeLists.txt
 echo "cmake_minimum_required(VERSION 2.8)" > CMakeLists.txt
-echo "project(main CXX)" >> CMakeLists.txt
+echo "project("${1//.cpp}" CXX)" >> CMakeLists.txt
 
-echo "add_executable(main "$1")" >> CMakeLists.txt
+echo "add_executable("${1//.cpp}" "$1")" >> CMakeLists.txt
 echo "set(CMAKE CXX_FLAGS "-Wall -Werror -std=c+11")" >> CMakeLists.txt
 
 #compile files
@@ -30,4 +30,4 @@ fi
 
 #result show
 echo "Result of program:"
-./main
+./"${1//.cpp}"
