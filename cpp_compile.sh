@@ -14,17 +14,18 @@ echo "set(CMAKE CXX_FLAGS "-Wall -Werror -std=c+11")" >> CMakeLists.txt
 rm -r out
 mkdir out
 cd out
-cmake ..
+cmake .. 2> error.log
 
 #make compile great again
 make help
-make 2> error.log
+make 2>> error.log
 echo "Errors during compilation:"
 if ! [[ -s error.log ]] ; 
     then
         echo "# No errors detected"
     else
-        cat error.log | grep "error"
+       cat error.log | grep "Cannot find" && echo "$1" && echo "Check if argument name is correct"  
+       cat error.log | grep "error"
 fi
 
 #result show
