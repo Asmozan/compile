@@ -1,29 +1,7 @@
-## Compile version for c++
-#CMakeLists init & config
-touch CMakeLists.txt
-echo "cmake_minimum_required(VERSION 2.8)" > CMakeLists.txt
-echo "project(main CXX)" >> CMakeLists.txt
-
-echo "add_executable(main main.cpp)" >> CMakeLists.txt
-echo "set(CMAKE CXX_FLAGS "-Wall -Werror -std=c+11")" >> CMakeLists.txt
-
-#compile files
-rm -r out
-mkdir out
-cd out
-cmake ..
-
-#make compile great again
-make help
-make 2> error.log
-echo "Errors during compilation:"
-if ! [[ -s error.log ]] ; 
+#
+if [[ $# -eq 0 ]] ;
     then
-        echo "# No errors detected"
+       bash cpp_compile.sh main.cpp
     else
-        cat error.log | grep "error"
+       bash cpp_compile.sh "$1"
 fi
-
-#result show
-echo "Result of program:"
-./main
