@@ -15,8 +15,15 @@ cmake ..
 #make compile great again
 make help
 make 2> error.log
-cat error.log | grep "error"
+echo "Errors during compilation:"
+if ! [[ -s error.log ]] ; 
+    then
+        echo "# No errors detected"
+    else
+        cat error.log | grep "error"
+fi
 
 #result show
 cd ..
+echo "Result of program:"
 bash resultlog.sh
