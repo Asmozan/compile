@@ -1,7 +1,5 @@
 ## Compile version for c++
 #Argumentation is important during discussions
-
-
 #CMakeLists init & config
 touch CMakeLists.txt
 echo "cmake_minimum_required(VERSION 2.8)" > CMakeLists.txt
