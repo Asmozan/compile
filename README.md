@@ -6,4 +6,4 @@ Your simple shell compiler
 
 TO DO:
 - other languages
-- libs maker (ETA: 26.02.17)
+- libs maker (ETA: it will be done when it will be done)
